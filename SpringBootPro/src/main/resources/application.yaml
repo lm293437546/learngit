@@ -1,0 +1,38 @@
+server:
+  port: 9898
+
+spring:
+  #配置数据源信息
+  datasource:
+    #配置连接数据库的各个信息
+    url: jdbc:mysql://175.178.43.79:3306/xws?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 630058
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+mybatis:
+  configuration:
+    jdbcTypeForNull: 'null'
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+
+#日志
+logging:
+  config: classpath:logback.xml
+  level:
+    com.xws.bootpro.mapper: DEBUG
+
+#防止CSRF攻击
+csrf:
+  # 前端地址
+  baseurl: http://127.0.0.1:8090
+  # N：未开启，Y：开启
+  enabledbasefilter: Y
+  # 无需拦截的URL集合（英文逗号隔开,以/开头）
+  openurllist:
+
+#定时任务
+task:
+  enabled: false
