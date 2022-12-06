@@ -12,6 +12,7 @@ cat id_rsa.pub
 
 ssh -T git@github.com
 
+拉取代码：git clone https://github.com/lm293437546/xws.git
 
 提交步骤：
 同步远程代码：git pull
