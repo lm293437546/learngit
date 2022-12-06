@@ -1,0 +1,21 @@
+git config --global user.name "lm"
+git config --global user.email "18179409455@163.com"
+
+cd ~/.ssh
+
+ssh-keygen -t rsa -C "18179409455@163.com"
+cd ~/.ssh
+
+cat id_rsa.pub
+
+把生成的密钥copy到git的SSH中
+
+ssh -T git@github.com
+
+
+提交步骤：
+同步远程代码：git pull
+查看当前状态：git status
+提交到缓存区：git add .
+推送到本地git库：git commit -m "注释"
+提交：git push
